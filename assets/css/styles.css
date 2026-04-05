@@ -76,7 +76,7 @@ body {
     text-decoration: none;
 }
 .logo-img {
-    height: 36px;
+    height: 200px;
     width: auto;
     display: block;
 }
@@ -201,7 +201,6 @@ body {
     max-width: 380px;
     margin: 0 auto 24px;
 }
-
 
 /* ══════════════════ CATALOG BODY ══════════════════ */
 .catalog-body {
@@ -524,12 +523,12 @@ body {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: var(--white);
-    border-bottom: 1px solid rgba(26, 51, 34, 0.07);
-    padding: 14px 16px;
+    background: transparent;
+    padding: 10px 12px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: flex-end;
+    pointer-events: none; /* let clicks pass through transparent area */
 }
 .modal-product-icon {
     width: 50px;
@@ -558,7 +557,9 @@ body {
     width: 36px;
     height: 36px;
     flex-shrink: 0;
-    background: var(--parchment);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -568,6 +569,8 @@ body {
     font-size: 18px;
     color: var(--text-mid);
     transition: all 0.2s;
+    pointer-events: auto; /* restore clicks — parent header is pointer-events: none */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 .modal-close:hover {
     background: var(--sand);
@@ -811,4 +814,309 @@ body {
 }
 .product-card {
     animation: fadeInUp 0.4s ease both;
+}
+
+/* ══════════════════ CARD: OVERLAY TAG + FOOTER ══════════════════ */
+.card-image {
+    position: relative;
+}
+
+.card-tag-overlay {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    z-index: 1;
+}
+.card-tag-overlay .cat-tag {
+    background: rgba(26, 51, 34, 0.8);
+    color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+.card-body {
+    padding: 12px 14px 10px;
+}
+.card-footer {
+    padding: 0 12px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-ficha {
+    flex: 1;
+    width: auto;
+}
+
+/* ══════════════════ MODAL: BANNER SPLIT + TAGLINE + CHIPS ══════════════════ */
+.modal-body {
+    padding: 35px 0 30px;
+}
+
+.modal-banner {
+    position: relative;
+    height: 160px;
+    display: flex;
+    overflow: visible;
+    margin-bottom: 80px; /* mirrors top padding for symmetric bottom overflow */
+}
+.modal-banner-product {
+    width: 42%;
+    background: #005b35;
+    flex-shrink: 0;
+    position: relative; /* anchor for absolute product img */
+    overflow: visible;
+}
+.modal-banner-product-img {
+    /* Absolutely centered on the banner — overflows equally above and below */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 320px;
+    width: auto;
+    z-index: 5;
+    filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.55))
+        drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+.modal-banner-deco {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+/* top gradient scrim for text readability */
+.modal-banner-deco::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 20, 10, 0.58) 0%,
+        transparent 70%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+.modal-banner-deco-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+.modal-banner-title {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    right: 10px;
+    z-index: 3;
+}
+.modal-banner-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+.modal-banner-cat {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #ffcd00;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    margin-top: 5px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+}
+.modal-tagline {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--text-mid);
+    padding: 14px 16px;
+    margin: 16px 16px 0;
+    background: rgba(200, 168, 75, 0.07);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.modal-chips-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 12px 16px 0;
+}
+.mchip {
+    font-size: 9.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    line-height: 1.4;
+}
+.mchip--app {
+    background: var(--parchment);
+    color: var(--text-mid);
+    border: 1px solid var(--sand);
+}
+.cat-bio-mchip {
+    background: #d4eddb;
+    color: #1d5732;
+}
+.cat-suelo-mchip {
+    background: #edddd4;
+    color: #6e3a1a;
+}
+.cat-correctores-mchip {
+    background: #ede8d4;
+    color: #5e4e1a;
+}
+.cat-micro-mchip {
+    background: #e5d4ed;
+    color: #4e1a6e;
+}
+
+/* ══════════════════ MODAL: BENEFITS GRID ══════════════════ */
+.modal-section-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    padding: 18px 16px 10px;
+}
+.modal-benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 0 16px;
+}
+@media (max-width: 340px) {
+    .modal-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.mbenefit-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 12px;
+    background: var(--cream);
+    border: 1px solid rgba(26, 51, 34, 0.08);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--text-mid);
+}
+.mbenefit-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, var(--sage), var(--moss));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: #fff;
+    margin-top: 1px;
+    font-weight: 700;
+}
+
+/* ══════════════════ ACCORDION ══════════════════ */
+.modal-accordions {
+    margin: 18px 16px 0;
+    border: 1px solid rgba(26, 51, 34, 0.1);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+.modal-accordion {
+    border-bottom: 1px solid rgba(26, 51, 34, 0.08);
+}
+.modal-accordion:last-child {
+    border-bottom: none;
+}
+
+.accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: inherit;
+    transition: background 0.15s;
+}
+.accordion-trigger:hover {
+    background: var(--cream);
+}
+.acc-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+.accordion-chevron {
+    font-size: 18px;
+    color: var(--text-light);
+    transition: transform 0.25s ease;
+    line-height: 1;
+    flex-shrink: 0;
+    user-select: none;
+}
+.modal-accordion.open .accordion-chevron {
+    transform: rotate(90deg);
+}
+
+/* CSS grid-template-rows trick: smooth height without fixed max-height */
+.accordion-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.28s ease;
+}
+.modal-accordion.open .accordion-body {
+    grid-template-rows: 1fr;
+}
+.accordion-inner {
+    overflow: hidden;
+    padding: 0 16px;
+    transition: padding 0.28s ease;
+}
+.modal-accordion.open .accordion-inner {
+    padding: 4px 16px 14px;
+}
+.accordion-inner p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-mid);
+    margin: 0;
+}
+
+.comp-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+}
+.comp-list li {
+    font-size: 12.5px;
+    color: var(--text-mid);
+    line-height: 1.5;
+    padding-left: 14px;
+    position: relative;
+}
+.comp-list li::before {
+    content: "·";
+    position: absolute;
+    left: 2px;
+    color: var(--sage);
+    font-size: 18px;
+    line-height: 1;
+    top: -1px;
+}
+
+.modal-actions {
+    margin: 20px 16px 0;
 }

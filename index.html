@@ -50,11 +50,19 @@
         />
 
         <!-- Security Headers (meta fallback — enforce via server headers in production) -->
-        <meta http-equiv="Content-Security-Policy"
-              content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';"
+        />
         <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-        <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-        <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+        <meta
+            http-equiv="Referrer-Policy"
+            content="strict-origin-when-cross-origin"
+        />
+        <meta
+            http-equiv="Permissions-Policy"
+            content="geolocation=(), microphone=(), camera=()"
+        />
 
         <!-- Canonical -->
         <link rel="canonical" href="https://pagrow.es/" />
@@ -64,7 +72,7 @@
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="assets/images/favicon/favicon-32x32.webp"
+            href="assets/images/favicon/favicon-32x32.png"
         />
         <link
             rel="apple-touch-icon"
@@ -73,26 +81,26 @@
 
         <!-- Structured Data -->
         <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Pagrow S.A.",
-          "url": "https://pagrow.es",
-          "logo": "https://pagrow.es/assets/images/logos-pagrow/png/color/ISOTIPO_BLANCO.webp",
-          "description": "Bioestimulantes, correctores nutricionales, desbloqueadores de suelo y microorganismos para potenciar cultivos en Ecuador.",
-          "areaServed": {
-            "@type": "Country",
-            "name": "Ecuador"
-          }
-        }
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Pagrow S.A.",
+                "url": "https://pagrow.es",
+                "logo": "https://pagrow.es/assets/images/logos-pagrow/png/color/ISOTIPO_BLANCO.webp",
+                "description": "Bioestimulantes, correctores nutricionales, desbloqueadores de suelo y microorganismos para potenciar cultivos en Ecuador.",
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "Ecuador"
+                }
+            }
         </script>
         <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Pagrow – Catálogo de Productos Agrícolas",
-          "url": "https://pagrow.es"
-        }
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Pagrow – Catálogo de Productos Agrícolas",
+                "url": "https://pagrow.es"
+            }
         </script>
 
         <link rel="stylesheet" href="assets/css/styles.css" />
@@ -102,7 +110,7 @@
         <header class="header">
             <a href="#" class="logo">
                 <img
-                    src="assets/images/logos-pagrow/png/blanco-y-negro/HORIZONTAL_CLARO.webp"
+                    src="assets/images/logos-pagrow/png/blanco-y-negro/HORIZONTAL_CLARO.png"
                     alt="Pagrow"
                     class="logo-img"
                 />
@@ -261,16 +269,6 @@
             <div class="modal-sheet" id="modalSheet">
                 <div class="modal-handle"></div>
                 <div class="modal-header">
-                    <img
-                        class="modal-product-icon"
-                        id="modalIcon"
-                        src="assets/images/placeholder.webp"
-                        alt=""
-                    />
-                    <div class="modal-title-block">
-                        <div class="modal-product-name" id="modalName"></div>
-                        <div class="modal-cat-label" id="modalCatLabel"></div>
-                    </div>
                     <button
                         class="modal-close"
                         id="modalClose"

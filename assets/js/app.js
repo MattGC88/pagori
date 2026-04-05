@@ -87,7 +87,9 @@ function renderCatalog() {
       name: "Resultados",
       description: "",
     };
-    const displayName = searchQuery ? `Búsqueda: "${escapeHTML(searchQuery)}"` : escapeHTML(cat.name);
+    const displayName = searchQuery
+      ? `Búsqueda: "${escapeHTML(searchQuery)}"`
+      : escapeHTML(cat.name);
     const desc = searchQuery ? "" : cat.description || "";
     container.innerHTML =
       buildBanner(cat.id || "raices", displayName, desc) +
@@ -125,13 +127,13 @@ function renderCatalog() {
 
 function renderCard(p) {
   return `
-    <div class="product-card ${escapeHTML(p.cssClass)}${p.badge ? " has-badge" : ""}" data-id="${escapeHTML(p.id)}" role="button" tabindex="0">
+    <div class="product-card ${escapeHTML(p.cssClass)}${p.badge ? " has-badge" : ""}" data-id="${escapeHTML(p.id)}" role="button" tabindex="0" aria-label="Ver ficha de ${escapeHTML(p.name)}">
       ${p.badge ? `<div class="product-badge">${escapeHTML(p.badge)}</div>` : ""}
       <div class="card-image">
         <img src="${escapeHTML(p.image || "assets/images/placeholder.webp")}" alt="${escapeHTML(p.name)}" width="400" height="300" loading="lazy">
-      </div>
-      <div class="card-top">
-        <span class="cat-tag">${escapeHTML(p.tag)}</span>
+        <div class="card-tag-overlay">
+          <span class="cat-tag">${escapeHTML(p.tag)}</span>
+        </div>
       </div>
       <div class="card-body">
         <div class="product-name">${escapeHTML(p.name)}</div>
@@ -139,10 +141,56 @@ function renderCard(p) {
       </div>
       <div class="card-footer">
         <button class="btn-ficha" onclick="event.stopPropagation(); openModal('${escapeHTML(p.id)}')">
-          Ver ficha técnica <span class="arrow">→</span>
+          Ver ficha <span class="arrow">→</span>
         </button>
       </div>
     </div>`;
+}
+
+// ════════════════════════════════════════════
+//  DECO IMAGE MAP
+// ════════════════════════════════════════════
+const DECO_MAP = {
+  arbusfort: "assets/images/decoracion-fichas/ARBUSFORT.png",
+  hidroliberex: "assets/images/decoracion-fichas/HIDROLIBEREX_DECO.png",
+  beauvetic: "assets/images/decoracion-fichas/beauvetic_deco.png",
+  bacilltic: "assets/images/decoracion-fichas/Bacilltic_deco.png",
+  "trichotic-liq":
+    "assets/images/decoracion-fichas/trichotic_liquido_decoracion.png",
+  paecylotic: "assets/images/decoracion-fichas/paecylotic-deco.png",
+  "trichotic-polvo": "assets/images/decoracion-fichas/trichotic_polvo_deco.png",
+};
+
+const DECO_FALLBACK = "assets/images/decoracion-fichas/default_deco.png";
+
+function getDecoSrc(p) {
+  return DECO_MAP[p.id] || DECO_FALLBACK;
+}
+
+// ════════════════════════════════════════════
+//  MODAL HELPERS
+// ════════════════════════════════════════════
+function buildAccordion(uid, label, bodyHTML, isOpen) {
+  return `
+    <div class="modal-accordion${isOpen ? " open" : ""}">
+      <button class="accordion-trigger" aria-expanded="${isOpen ? "true" : "false"}" aria-controls="acc-${escapeHTML(uid)}">
+        <span class="acc-title">${escapeHTML(label)}</span>
+        <span class="accordion-chevron">›</span>
+      </button>
+      <div class="accordion-body" id="acc-${escapeHTML(uid)}" role="region">
+        <div class="accordion-inner">${bodyHTML}</div>
+      </div>
+    </div>`;
+}
+
+function buildCompositionItems(comp) {
+  const cleaned = comp.replace(/\.$/, "").trim();
+  const items = cleaned
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (items.length <= 1) return `<p>${escapeHTML(cleaned)}</p>`;
+  return `<ul class="comp-list">${items.map((i) => `<li>${escapeHTML(i)}</li>`).join("")}</ul>`;
 }
 
 // ════════════════════════════════════════════
@@ -153,54 +201,55 @@ window.openModal = function (id) {
   if (!p) return;
   openProduct = p;
 
-  document.getElementById("modalName").textContent = p.name;
-  document.getElementById("modalCatLabel").textContent = p.catName;
-
-  const iconEl = document.getElementById("modalIcon");
-  iconEl.src = p.image || "assets/images/placeholder.webp";
-  iconEl.alt = p.name;
+  const safePdf =
+    p.pdf && p.pdf.startsWith("assets/") ? escapeHTML(p.pdf) : null;
+  const appShort = p.application.split(/[.;]/)[0].trim();
+  const decoSrc = escapeHTML(getDecoSrc(p));
+  const productSrc = escapeHTML(p.image || "assets/images/placeholder.webp");
 
   const benefitsHTML = p.benefits
     .map(
       (b) => `
-    <li class="benefit-item">
-      <span class="benefit-dot">✓</span>
+    <div class="mbenefit-card">
+      <span class="mbenefit-icon">✓</span>
       <span>${escapeHTML(b)}</span>
-    </li>`,
+    </div>`,
     )
     .join("");
 
-  const safePdf = p.pdf && p.pdf.startsWith("assets/") ? escapeHTML(p.pdf) : null;
   document.getElementById("modalBody").innerHTML = `
-    <p class="modal-desc">${escapeHTML(p.fullDesc)}</p>
-    <div class="info-grid">
-      <div class="info-card">
-        <div class="info-card-label">Aplicación</div>
-        <div class="info-card-value">${escapeHTML(p.application.split(".")[0])}</div>
+    <div class="modal-banner">
+      <div class="modal-banner-product">
+        <img src="${productSrc}" alt="${escapeHTML(p.name)}" class="modal-banner-product-img" loading="lazy">
       </div>
-      <div class="info-card">
-        <div class="info-card-label">Tipo</div>
-        <div class="info-card-value">${escapeHTML(p.tag)}</div>
+      <div class="modal-banner-deco">
+        <img src="${decoSrc}" alt="" class="modal-banner-deco-img">
+        <div class="modal-banner-title">
+          <div class="modal-banner-name" id="modalName">${escapeHTML(p.name)}</div>
+          <div class="modal-banner-cat">${escapeHTML(p.tag)}</div>
+        </div>
       </div>
     </div>
-    <div class="benefits-title">Beneficios principales</div>
-    <ul class="benefits-list">${benefitsHTML}</ul>
-    <div class="composition-box">
-      <div class="composition-title">Composición</div>
-      <div class="composition-text">${escapeHTML(p.composition)}</div>
+
+    <div class="modal-tagline">${escapeHTML(p.shortDesc)}</div>
+
+    <div class="modal-chips-row">
+      <span class="mchip ${escapeHTML(p.cssClass)}-mchip">${escapeHTML(p.tag)}</span>
+      <span class="mchip mchip--app">${escapeHTML(appShort)}</span>
+    </div>
+
+    <div class="modal-section-label">Beneficios clave</div>
+    <div class="modal-benefits-grid">${benefitsHTML}</div>
+
+    <div class="modal-accordions">
+      ${buildAccordion("desc", "Descripción completa", `<p>${escapeHTML(p.fullDesc)}</p>`, false)}
+      ${buildAccordion("comp", "Composición", buildCompositionItems(p.composition), true)}
+      ${buildAccordion("use", "Modo de aplicación", `<p>${escapeHTML(p.application)}</p>`, false)}
     </div>
 
     <div class="modal-actions">
-      ${
-        safePdf
-          ? `<a href="${safePdf}" class="btn-download" target="_blank" rel="noopener noreferrer">
-        Ver ficha técnica (PDF)
-      </a>`
-          : ""
-      }
-      <a href="#" class="btn-contact" onclick="return false;">
-        Consultar con un agrónomo
-      </a>
+      ${safePdf ? `<a href="${safePdf}" class="btn-download" target="_blank" rel="noopener noreferrer">Ver ficha técnica (PDF)</a>` : ""}
+      <a href="#" class="btn-contact" onclick="return false;">Consultar con un agrónomo</a>
     </div>
   `;
 
@@ -226,6 +275,28 @@ document.getElementById("modalOverlay").addEventListener("click", function (e) {
 });
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
+});
+
+// Accordion toggle — single delegated listener on stable parent
+document.getElementById("modalSheet").addEventListener("click", function (e) {
+  const trigger = e.target.closest(".accordion-trigger");
+  if (!trigger) return;
+  const accordion = trigger.closest(".modal-accordion");
+  const isOpen = accordion.classList.contains("open");
+  accordion
+    .closest(".modal-accordions")
+    .querySelectorAll(".modal-accordion")
+    .forEach((a) => {
+      a.classList.remove("open");
+      a.querySelector(".accordion-trigger").setAttribute(
+        "aria-expanded",
+        "false",
+      );
+    });
+  if (!isOpen) {
+    accordion.classList.add("open");
+    trigger.setAttribute("aria-expanded", "true");
+  }
 });
 
 // ════════════════════════════════════════════

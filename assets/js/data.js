@@ -591,7 +591,7 @@ const categories = [
           "Consorcio de HMA ≥ 500 propágulos/g, Glomus intraradices dominante.",
         application:
           "Incorporar al sustrato o aplicar directamente sobre raíces al trasplante. Dosis: 5–10 g/planta.",
-        tag: "Micorrizas ",
+        tag: "Micorriza",
       },
       {
         id: "bacilltic",
