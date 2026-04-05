@@ -952,11 +952,6 @@ body {
     border-radius: 20px;
     line-height: 1.4;
 }
-.mchip--app {
-    background: var(--parchment);
-    color: var(--text-mid);
-    border: 1px solid var(--sand);
-}
 .cat-bio-mchip {
     background: #d4eddb;
     color: #1d5732;

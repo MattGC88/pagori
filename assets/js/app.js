@@ -203,7 +203,6 @@ window.openModal = function (id) {
 
   const safePdf =
     p.pdf && p.pdf.startsWith("assets/") ? escapeHTML(p.pdf) : null;
-  const appShort = p.application.split(/[.;]/)[0].trim();
   const decoSrc = escapeHTML(getDecoSrc(p));
   const productSrc = escapeHTML(p.image || "assets/images/placeholder.webp");
 
@@ -235,7 +234,6 @@ window.openModal = function (id) {
 
     <div class="modal-chips-row">
       <span class="mchip ${escapeHTML(p.cssClass)}-mchip">${escapeHTML(p.tag)}</span>
-      <span class="mchip mchip--app">${escapeHTML(appShort)}</span>
     </div>
 
     <div class="modal-section-label">Beneficios clave</div>
@@ -244,7 +242,6 @@ window.openModal = function (id) {
     <div class="modal-accordions">
       ${buildAccordion("desc", "Descripción completa", `<p>${escapeHTML(p.fullDesc)}</p>`, false)}
       ${buildAccordion("comp", "Composición", buildCompositionItems(p.composition), true)}
-      ${buildAccordion("use", "Modo de aplicación", `<p>${escapeHTML(p.application)}</p>`, false)}
     </div>
 
     <div class="modal-actions">
