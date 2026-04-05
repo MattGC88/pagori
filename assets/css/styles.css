@@ -207,6 +207,40 @@ body {
     padding: 0 16px 40px;
 }
 
+.tab-bar {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 20px 0 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.tab-bar::-webkit-scrollbar {
+    display: none;
+}
+.tab-chip {
+    flex-shrink: 0;
+    background: var(--white);
+    border: 1.5px solid var(--sand);
+    border-radius: 100px;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: var(--text-mid);
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+.tab-chip:hover {
+    border-color: var(--sage);
+    color: var(--forest);
+}
+.tab-chip.active {
+    background: var(--forest);
+    border-color: var(--forest);
+    color: var(--white);
+    font-weight: 600;
+}
+
 .results-bar {
     display: flex;
     align-items: center;
