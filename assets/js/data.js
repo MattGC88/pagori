@@ -358,25 +358,6 @@ const categories = [
     cssClass: "cat-correctores",
     products: [
       {
-        id: "sagaquel-zinc",
-        name: "Sagaquel Zinc",
-        image: "assets/images/sagaquel_zinc_peque.webp",
-        pdf: "assets/pdfs/correctores-nutricionales/sagaquel-zinc.pdf",
-        shortDesc:
-          "Fertilizante foliar y radicular líquido multiquelatado de zinc de muy alta concentración.",
-        fullDesc:
-          "Sagaquel Zinc es un fertilizante foliar y radicular líquido multiquelatado de zinc de muy alta concentración. El zinc es cofactor de más de 300 enzimas y esencial para la síntesis de auxinas (triptófano), por lo que su deficiencia impacta directamente el crecimiento y la calidad de frutos.",
-        benefits: [
-          "Alta concentración: 14% Zn elemental quelatado",
-          "Previene y corrige roseta en frutales",
-          "Mejora la síntesis de auxinas endógenas",
-          "Visible recuperación en 7–10 días",
-        ],
-        composition: "Zinc quelatado EDTA 14% (140 g/L).",
-        application: "Foliar. Dosis: 1–1.5 cc/L. Evitar mezcla con fosfatos.",
-        tag: "Correctores",
-      },
-      {
         id: "sagaquel-calcio",
         name: "Sagaquel Calcio",
         image: "assets/images/sagaquel_calcio_peque.webp",
@@ -397,24 +378,25 @@ const categories = [
         tag: "Correctores",
       },
       {
-        id: "sagaquel-manganeso",
-        name: "Sagaquel Manganeso",
-        image: "assets/images/sagaquel_manganeso_peque.webp",
-        pdf: "assets/pdfs/correctores-nutricionales/sagaquel-manganeso.pdf",
+        id: "sagaquel-zinc",
+        name: "Sagaquel Zinc",
+        image: "assets/images/sagaquel_zinc_peque.webp",
+        pdf: "assets/pdfs/correctores-nutricionales/sagaquel-zinc.pdf",
         shortDesc:
-          "Fertilizante foliar y radicular multiquelatado. El manganeso interviene en la palatabilidad de la savia y es crucial en la activación de enzimas para el metabolismo de carbohidratos y nitrógeno.",
+          "Fertilizante foliar y radicular líquido multiquelatado de zinc de muy alta concentración.",
         fullDesc:
-          "Sagaquel Manganeso es un fertilizante foliar y radicular multiquelatado. La aplicación de manganeso interviene en la palatabilidad de la savia, lo cual es importante en el manejo y control de insectos chupadores y masticadores. Además, es crucial en la activación de enzimas para el metabolismo de carbohidratos y nitrógeno.",
+          "Sagaquel Zinc es un fertilizante foliar y radicular líquido multiquelatado de zinc de muy alta concentración. El zinc es cofactor de más de 300 enzimas y esencial para la síntesis de auxinas (triptófano), por lo que su deficiencia impacta directamente el crecimiento y la calidad de frutos.",
         benefits: [
-          "Restaura eficiencia fotosintética en 5–7 días",
-          "Activa antioxidantes enzimáticos (MnSOD)",
-          "Estable en solución hasta pH 7.5",
-          "Control de insectos chupadores vía palatabilidad de savia",
+          "Alta concentración: 14% Zn elemental quelatado",
+          "Previene y corrige roseta en frutales",
+          "Mejora la síntesis de auxinas endógenas",
+          "Visible recuperación en 7–10 días",
         ],
-        composition: "Manganeso quelatado EDTA 13% (130 g/L Mn).",
-        application: "Foliar. Dosis: 1–2 cc/L según severidad.",
+        composition: "Zinc quelatado EDTA 14% (140 g/L).",
+        application: "Foliar. Dosis: 1–1.5 cc/L. Evitar mezcla con fosfatos.",
         tag: "Correctores",
       },
+
       {
         id: "sagaquel-magnesio",
         name: "Sagaquel Magnesio",
@@ -434,27 +416,6 @@ const categories = [
           "Magnesio quelatado con complejo de agentes quelatantes, alta concentración.",
         application:
           "Foliar y drench. Dosis: 1–2 cc/L o según recomendación técnica.",
-        tag: "Correctores",
-      },
-      {
-        id: "nutriplantplus",
-        name: "Nutriplant Plus",
-        image: "assets/images/nutriplant_plus_peque.webp",
-        pdf: "assets/pdfs/correctores-nutricionales/nutriplant-plus.pdf",
-        shortDesc:
-          "Fertilizante foliar completo, enriquecido con elementos mayores, secundarios y menores: nitrógeno, fósforo, potasio, hierro, zinc, boro, cobre, manganeso, cobalto y molibdeno.",
-        fullDesc:
-          "Nutriplant Plus es un fertilizante foliar completo enriquecido con elementos mayores, secundarios y menores: nitrógeno, fósforo, potasio, hierro, zinc, boro, cobre, manganeso, cobalto y molibdeno. Diseñado para etapas de alta demanda nutricional (floración, llenado de fruto), su balanceada relación NPK se potencia con micronutrientes quelatados y aminoácidos.",
-        benefits: [
-          "Cobertura nutricional completa en una aplicación",
-          "Formulación líquida de alta concentración y solubilidad",
-          "Bioestimulantes integrados para máxima absorción",
-          "Visible respuesta en vigor y color foliar",
-        ],
-        composition:
-          "N 7%, P2O5 7%, K2O 7%, MgO 1%, Fe 0.1%, Mn 0.05%, Zn 0.05%, B 0.02%, Co, Mo, Aminoácidos 5%.",
-        application:
-          "Foliar. Dosis: 2–3 cc/L. Máximo 4 aplicaciones por ciclo.",
         tag: "Correctores",
       },
       {
@@ -501,6 +462,25 @@ const categories = [
       },
 
       {
+        id: "sagaquel-manganeso",
+        name: "Sagaquel Manganeso",
+        image: "assets/images/sagaquel_manganeso_peque.webp",
+        pdf: "assets/pdfs/correctores-nutricionales/sagaquel-manganeso.pdf",
+        shortDesc:
+          "Fertilizante foliar y radicular multiquelatado. El manganeso interviene en la palatabilidad de la savia y es crucial en la activación de enzimas para el metabolismo de carbohidratos y nitrógeno.",
+        fullDesc:
+          "Sagaquel Manganeso es un fertilizante foliar y radicular multiquelatado. La aplicación de manganeso interviene en la palatabilidad de la savia, lo cual es importante en el manejo y control de insectos chupadores y masticadores. Además, es crucial en la activación de enzimas para el metabolismo de carbohidratos y nitrógeno.",
+        benefits: [
+          "Restaura eficiencia fotosintética en 5–7 días",
+          "Activa antioxidantes enzimáticos (MnSOD)",
+          "Estable en solución hasta pH 7.5",
+          "Control de insectos chupadores vía palatabilidad de savia",
+        ],
+        composition: "Manganeso quelatado EDTA 13% (130 g/L Mn).",
+        application: "Foliar. Dosis: 1–2 cc/L según severidad.",
+        tag: "Correctores",
+      },
+      {
         id: "aminok",
         name: "Aminok",
         image: "assets/images/aminok_peque.webp",
@@ -518,6 +498,28 @@ const categories = [
         composition:
           "Potasio orgánico-aminoácido 30% (K2O), Fósforo, Aminoácidos libres 15%, Nitrógeno orgánico 4%.",
         application: "Foliar en engorde y maduración. Dosis: 2–3 cc/L.",
+        tag: "Correctores",
+      },
+
+      {
+        id: "nutriplantplus",
+        name: "Nutriplant Plus",
+        image: "assets/images/nutriplant_plus_peque.webp",
+        pdf: "assets/pdfs/correctores-nutricionales/nutriplant-plus.pdf",
+        shortDesc:
+          "Fertilizante foliar completo, enriquecido con elementos mayores, secundarios y menores: nitrógeno, fósforo, potasio, hierro, zinc, boro, cobre, manganeso, cobalto y molibdeno.",
+        fullDesc:
+          "Nutriplant Plus es un fertilizante foliar completo enriquecido con elementos mayores, secundarios y menores: nitrógeno, fósforo, potasio, hierro, zinc, boro, cobre, manganeso, cobalto y molibdeno. Diseñado para etapas de alta demanda nutricional (floración, llenado de fruto), su balanceada relación NPK se potencia con micronutrientes quelatados y aminoácidos.",
+        benefits: [
+          "Cobertura nutricional completa en una aplicación",
+          "Formulación líquida de alta concentración y solubilidad",
+          "Bioestimulantes integrados para máxima absorción",
+          "Visible respuesta en vigor y color foliar",
+        ],
+        composition:
+          "N 7%, P2O5 7%, K2O 7%, MgO 1%, Fe 0.1%, Mn 0.05%, Zn 0.05%, B 0.02%, Co, Mo, Aminoácidos 5%.",
+        application:
+          "Foliar. Dosis: 2–3 cc/L. Máximo 4 aplicaciones por ciclo.",
         tag: "Correctores",
       },
 
