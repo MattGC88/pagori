@@ -105,15 +105,21 @@ function renderCatalog() {
   document.querySelectorAll(".product-card").forEach((el, idx) => {
     el.style.animationDelay = `${(idx % 8) * 40}ms`;
     el.addEventListener("click", () => openModal(el.dataset.id));
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openModal(el.dataset.id);
+      }
+    });
   });
 }
 
 function renderCard(p) {
   return `
-    <div class="product-card ${p.cssClass}${p.badge ? ' has-badge' : ''}" data-id="${p.id}" role="button" tabindex="0">
-      ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ''}
+    <div class="product-card ${p.cssClass}${p.badge ? " has-badge" : ""}" data-id="${p.id}" role="button" tabindex="0">
+      ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ""}
       <div class="card-image">
-        <img src="${p.image || "assets/images/placeholder.png"}" alt="${p.name}">
+        <img src="${p.image || "assets/images/placeholder.webp"}" alt="${p.name}" width="400" height="300" loading="lazy">
       </div>
       <div class="card-top">
         <span class="cat-tag">${p.tag}</span>
@@ -142,7 +148,7 @@ window.openModal = function (id) {
   document.getElementById("modalCatLabel").textContent = p.catName;
 
   const iconEl = document.getElementById("modalIcon");
-  iconEl.src = p.image || "assets/images/placeholder.png";
+  iconEl.src = p.image || "assets/images/placeholder.webp";
   iconEl.alt = p.name;
 
   const benefitsHTML = p.benefits
@@ -188,13 +194,18 @@ window.openModal = function (id) {
     </div>
   `;
 
-  document.getElementById("modalOverlay").classList.add("open");
+  const overlay = document.getElementById("modalOverlay");
+  overlay.classList.add("open");
+  overlay.removeAttribute("aria-hidden");
   document.getElementById("modalSheet").scrollTop = 0;
   document.body.style.overflow = "hidden";
+  document.getElementById("modalClose").focus();
 };
 
 function closeModal() {
-  document.getElementById("modalOverlay").classList.remove("open");
+  const overlay = document.getElementById("modalOverlay");
+  overlay.classList.remove("open");
+  overlay.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
   openProduct = null;
 }

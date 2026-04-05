@@ -3,7 +3,60 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Pagrow – Catálogo de Productos</title>
+        <title>Pagrow – Catálogo de Productos Agrícolas</title>
+
+        <!-- SEO -->
+        <meta
+            name="description"
+            content="Catálogo de bioestimulantes, correctores nutricionales, desbloqueadores de suelo y microorganismos de Pagrow. Ciencia agrícola para el crecimiento y protección de tus cultivos en Ecuador."
+        />
+        <meta
+            name="keywords"
+            content="bioestimulantes, correctores nutricionales, microorganismos agrícolas, fertilizantes Ecuador, Pagrow, cultivos"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Pagrow S.A." />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="Pagrow – Catálogo de Productos Agrícolas"
+        />
+        <meta
+            property="og:description"
+            content="Bioestimulantes, correctores nutricionales, desbloqueadores de suelo y microorganismos para potenciar tus cultivos."
+        />
+        <meta
+            property="og:image"
+            content="assets/images/logos-pagrow/png/color/ISOTIPO_BLANCO.webp"
+        />
+        <meta property="og:url" content="/" />
+        <meta property="og:locale" content="es_EC" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Pagrow – Catálogo de Productos Agrícolas"
+        />
+        <meta
+            name="twitter:description"
+            content="Bioestimulantes, correctores nutricionales, desbloqueadores de suelo y microorganismos para potenciar tus cultivos."
+        />
+        <meta
+            name="twitter:image"
+            content="assets/images/logos-pagrow/png/color/ISOTIPO_BLANCO.webp"
+        />
+
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="assets/images/favicon/favicon-32x32.webp"
+        />
+
         <link rel="stylesheet" href="assets/css/styles.css" />
     </head>
     <body>
@@ -11,13 +64,18 @@
         <header class="header">
             <a href="#" class="logo">
                 <img
-                    src="assets/images/logos-pagrow/png/blanco-y-negro/HORIZONTAL_CLARO.png"
+                    src="assets/images/logos-pagrow/png/blanco-y-negro/HORIZONTAL_CLARO.webp"
                     alt="Pagrow"
                     class="logo-img"
                 />
             </a>
             <div class="header-actions">
-                <button class="icon-btn" id="searchToggle" title="Buscar">
+                <button
+                    class="icon-btn"
+                    id="searchToggle"
+                    title="Buscar"
+                    aria-label="Abrir buscador de productos"
+                >
                     <svg
                         width="16"
                         height="16"
@@ -25,12 +83,18 @@
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2"
+                        aria-hidden="true"
+                        focusable="false"
                     >
                         <circle cx="11" cy="11" r="8" />
                         <path d="m21 21-4.35-4.35" />
                     </svg>
                 </button>
-                <button class="icon-btn" title="Menu">
+                <button
+                    class="icon-btn"
+                    title="Menú"
+                    aria-label="Abrir menú de navegación"
+                >
                     <svg
                         width="16"
                         height="16"
@@ -38,6 +102,8 @@
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2"
+                        aria-hidden="true"
+                        focusable="false"
                     >
                         <line x1="3" y1="6" x2="21" y2="6" />
                         <line x1="3" y1="12" x2="21" y2="12" />
@@ -58,10 +124,13 @@
                     fill="none"
                     stroke="currentColor"
                     stroke-width="2"
+                    aria-hidden="true"
+                    focusable="false"
                 >
                     <circle cx="11" cy="11" r="8" />
                     <path d="m21 21-4.35-4.35" />
                 </svg>
+                <label for="searchInput" class="sr-only">Buscar producto</label>
                 <input
                     type="text"
                     id="searchInput"
@@ -78,7 +147,7 @@
                     Ciencia y experiencia para el <em>crecimiento</em> y
                     protección de tus cultivos
                 </h1>
-                <p style="font-size: medium">
+                <p>
                     Bioestimulantes, correctores nutricionales, desbloqueadores
                     de suelo y microorganismos.
                 </p>
@@ -104,8 +173,8 @@
         <footer class="footer">
             <div class="footer-logo">
                 <img
-                    src="assets/images/logos-pagrow/png/color/ISOTIPO_BLANCO.png"
-                    alt="Pagrow"
+                    src="assets/images/logos-pagrow/png/color/ISOTIPO_BLANCO.webp"
+                    alt="Isotipo Pagrow"
                     class="footer-logo-img"
                 />
             </div>
@@ -137,7 +206,7 @@
             </div>
             <div class="footer-bottom">
                 <div class="footer-copy">
-                    © 2025 Pagrow S.A. Todos los derechos reservados.
+                    © 2026 Pagrow S.A. Todos los derechos reservados.
                 </div>
             </div>
         </footer>
@@ -148,6 +217,8 @@
             id="modalOverlay"
             role="dialog"
             aria-modal="true"
+            aria-labelledby="modalName"
+            aria-hidden="true"
         >
             <div class="modal-sheet" id="modalSheet">
                 <div class="modal-handle"></div>
@@ -155,14 +226,18 @@
                     <img
                         class="modal-product-icon"
                         id="modalIcon"
-                        src="assets/images/placeholder.png"
+                        src="assets/images/placeholder.webp"
                         alt=""
                     />
                     <div class="modal-title-block">
                         <div class="modal-product-name" id="modalName"></div>
                         <div class="modal-cat-label" id="modalCatLabel"></div>
                     </div>
-                    <button class="modal-close" id="modalClose">
+                    <button
+                        class="modal-close"
+                        id="modalClose"
+                        aria-label="Cerrar"
+                    >
                         &#x2715;
                     </button>
                 </div>
@@ -170,7 +245,7 @@
             </div>
         </div>
 
-        <script src="assets/js/data.js"></script>
-        <script src="assets/js/app.js"></script>
+        <script src="assets/js/data.js" defer></script>
+        <script src="assets/js/app.js" defer></script>
     </body>
 </html>

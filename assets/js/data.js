@@ -9,7 +9,7 @@ const categories = [
       {
         id: "raisol",
         name: "Raisol",
-        image: "assets/images/raisol_peque.png",
+        image: "assets/images/raisol_peque.webp",
         pdf: "assets/pdfs/raisol.pdf",
         shortDesc:
           "Enraizador con aminoácidos, fitohormonas, L-aminoácidos y elementos mayores. Contiene extractos de algas marinas y ácidos policarboxílicos para potencializar el desarrollo de raíces primarias y secundarias.",
@@ -30,7 +30,7 @@ const categories = [
       {
         id: "tyron",
         name: "Tyron",
-        image: "assets/images/tyron_peque.png",
+        image: "assets/images/tyron_peque.webp",
         pdf: "assets/pdfs/tyron.pdf",
         shortDesc:
           "Bioestimulante que provee nutrientes y estimula el desarrollo de pelos absorbentes, asegurando la toma de nutrientes del suelo.",
@@ -51,7 +51,7 @@ const categories = [
       {
         id: "algamar",
         name: "Algamar",
-        image: "assets/images/algamar_peque.png",
+        image: "assets/images/algamar_peque.webp",
         pdf: "assets/pdfs/algamar.pdf",
         shortDesc:
           "100% orgánico y ultra soluble, a base de cinco distintas algas marinas: Sargassum, Laminaria, Egregia, Ascophyllum nodosum y Macrocystis.",
@@ -71,7 +71,7 @@ const categories = [
       {
         id: "algavit",
         name: "Algavit",
-        image: "assets/images/algavit_peque.png",
+        image: "assets/images/algavit_peque.webp",
         pdf: "assets/pdfs/algavit.pdf",
         shortDesc:
           "Extracto concentrado de Ascophyllum nodosum que aporta de manera natural auxinas, citocininas, aminoácidos, betaínas, carbohidratos, vitaminas, oligosacáridos y macro y microelementos.",
@@ -91,7 +91,7 @@ const categories = [
       {
         id: "agrozyme",
         name: "Agrozyme",
-        image: "assets/images/agrozyme_peque.png",
+        image: "assets/images/agrozyme_peque.webp",
         pdf: "assets/pdfs/agrozyme.pdf",
         shortDesc:
           "De origen natural, estimula procesos metabólicos y fisiológicos como la translocación de sustancias, diferenciación de yemas, síntesis de clorofila y uniformidad en el amarre de flores y frutos.",
@@ -112,7 +112,7 @@ const categories = [
       {
         id: "plantamin",
         name: "Plantamin",
-        image: "assets/images/plantamin_peque.png",
+        image: "assets/images/plantamin_peque.webp",
         pdf: "assets/pdfs/plantamin.pdf",
         shortDesc:
           "Formulado a base de aminoácidos, enriquecido con NPK, microelementos, ácido fólico y vitaminas. Produce un desarrollo armónico vegetal radicular y aéreo, obteniendo mayor y mejor producción.",
@@ -132,7 +132,7 @@ const categories = [
       {
         id: "brotamin",
         name: "Brotamin",
-        image: "assets/images/brotamin_peque.png",
+        image: "assets/images/brotamin_peque.webp",
         pdf: "assets/pdfs/brotamin.pdf",
         shortDesc:
           "Formulado a base de aminoácidos y enriquecido con NPK. Indicado para aplicaciones foliares y radiculares en momentos de máxima actividad vegetativa: desde el crecimiento hasta la fructificación o floración.",
@@ -153,7 +153,7 @@ const categories = [
       {
         id: "floramin",
         name: "Floramin",
-        image: "assets/images/floramin_peque.png",
+        image: "assets/images/floramin_peque.webp",
         pdf: "assets/pdfs/floramin.pdf",
         shortDesc:
           "A base de aminoácidos, especialmente formulado para estimular la floración, desarrollo y maduración de frutos y tubérculos. Asegura mayor consistencia, calidad y tamaño. Contiene zinc, manganeso, cobre, molibdeno y boro.",
@@ -175,7 +175,7 @@ const categories = [
       {
         id: "orofos-magnesio",
         name: "Orofos Magnesio",
-        image: "assets/images/orofos_magnesio_peque.png",
+        image: "assets/images/orofos_magnesio_peque.webp",
         pdf: "assets/pdfs/orofos-magnesio.pdf",
         shortDesc:
           "Fertilizante concentrado con magnesio y fósforo en forma de ion fosfito de alta asimilación. Estimula la síntesis de fitoalexinas, incrementando la resistencia contra enfermedades fungosas.",
@@ -195,7 +195,7 @@ const categories = [
       {
         id: "orofos-calcio",
         name: "Orofos Calcio",
-        image: "assets/images/orofos_calcio_peque.png",
+        image: "assets/images/orofos_calcio_peque.webp",
         pdf: "assets/pdfs/orofos-calcio.pdf",
         shortDesc:
           "Fertilizante concentrado con calcio y fósforo en forma de ion fosfito de alta asimilación. Estimula la síntesis de fitoalexinas, incrementando la resistencia contra enfermedades fungosas.",
@@ -216,7 +216,7 @@ const categories = [
       {
         id: "orofos-pk",
         name: "Orofos P+K",
-        image: "assets/images/orofos_pk_peque.png",
+        image: "assets/images/orofos_pk_peque.webp",
         pdf: "assets/pdfs/orofos-pk.pdf",
         shortDesc:
           "Fertilizante concentrado con potasio y fósforo en forma de fosfito. Además de nutrir, estimula la síntesis de fitoalexinas, con actividad fungistática y fungicida.",
@@ -237,7 +237,7 @@ const categories = [
       {
         id: "stresso",
         name: "Stresso",
-        image: "assets/images/stresso_peque.png",
+        image: "assets/images/stresso_peque.webp",
         pdf: "assets/pdfs/stresso.pdf",
         shortDesc:
           "100% orgánico, formulado a base de un derivado de la cisteína y ácido fólico. Da vigor, mejor desarrollo y alto rendimiento, aumentando la producción de azúcares, proteínas y vitaminas.",
@@ -267,7 +267,7 @@ const categories = [
       {
         id: "humax20",
         name: "Humax 20",
-        image: "assets/images/humax_20_peque.png",
+        image: "assets/images/humax_20_peque.webp",
         pdf: "assets/pdfs/humax20.pdf",
         shortDesc:
           "100% biodegradable, a base de ácidos húmicos y fúlvicos. Mejora la estructura del suelo, favorece el desarrollo radicular y estimula la actividad microbiana. Aumenta la disponibilidad de nutrientes.",
@@ -289,7 +289,7 @@ const categories = [
       {
         id: "nutrihumus90",
         name: "Nutri-Humus 90",
-        image: "assets/images/nutri_humus_90_peque.png",
+        image: "assets/images/nutri_humus_90_peque.webp",
         pdf: "assets/pdfs/nutrihumus90.pdf",
         shortDesc:
           "Cristales ultrasolubles con la mayor concentración y alta pureza del ácido húmico. Sus elementos activos son ácidos húmicos y ácidos fúlvicos 100% asimilables.",
@@ -310,7 +310,7 @@ const categories = [
       {
         id: "nutrifull",
         name: "Nutrifull",
-        image: "assets/images/nutrifull_peque.png",
+        image: "assets/images/nutrifull_peque.webp",
         pdf: "assets/pdfs/nutrifull.pdf",
         shortDesc:
           "Concentrado 100% orgánico a base de ácidos fúlvicos bioactivados enzimáticamente, que incrementan notablemente la absorción, asimilación y movilización de los nutrientes del suelo.",
@@ -331,7 +331,7 @@ const categories = [
       {
         id: "hidroliberex",
         name: "Hidroliberex",
-        image: "assets/images/hidroliberex_peque.png",
+        image: "assets/images/hidroliberex_peque.webp",
         pdf: "assets/pdfs/hidroliberex.pdf",
         shortDesc:
           "A base de ácidos carboxílicos y fúlvicos. Incrementa la absorción de nutrientes, mejora la permeabilidad y aireación, solubiliza el fósforo y aumenta el intercambio catiónico.",
@@ -360,7 +360,7 @@ const categories = [
       {
         id: "sagaquel-zinc",
         name: "Sagaquel Zinc",
-        image: "assets/images/sagaquel_zinc_peque.png",
+        image: "assets/images/sagaquel_zinc_peque.webp",
         pdf: "assets/pdfs/sagaquel-zinc.pdf",
         shortDesc:
           "Fertilizante foliar y radicular líquido multiquelatado de zinc de muy alta concentración.",
@@ -379,7 +379,7 @@ const categories = [
       {
         id: "sagaquel-calcio",
         name: "Sagaquel Calcio",
-        image: "assets/images/sagaquel_calcio_peque.png",
+        image: "assets/images/sagaquel_calcio_peque.webp",
         pdf: "assets/pdfs/sagaquel-calcio.pdf",
         shortDesc:
           "Fertilizante foliar y radicular de muy alta concentración de calcio que, además, contiene en forma balanceada otros elementos.",
@@ -399,7 +399,7 @@ const categories = [
       {
         id: "sagaquel-manganeso",
         name: "Sagaquel Manganeso",
-        image: "assets/images/sagaquel_manganeso_peque.png",
+        image: "assets/images/sagaquel_manganeso_peque.webp",
         pdf: "assets/pdfs/sagaquel-manganeso.pdf",
         shortDesc:
           "Fertilizante foliar y radicular multiquelatado. El manganeso interviene en la palatabilidad de la savia y es crucial en la activación de enzimas para el metabolismo de carbohidratos y nitrógeno.",
@@ -418,7 +418,7 @@ const categories = [
       {
         id: "sagaquel-magnesio",
         name: "Sagaquel Magnesio",
-        image: "assets/images/sagaquel_magnesio.png",
+        image: "assets/images/sagaquel_magnesio.webp",
         pdf: "assets/pdfs/sagaquel-magnesio.pdf",
         shortDesc:
           "Fertilizante foliar y radicular líquido multiquelatado de magnesio de muy alta concentración, formulado para prevenir y corregir rápidamente deficiencias de magnesio en cultivos hortícolas, frutales, extensivos, ornamentales y forrajeros.",
@@ -439,7 +439,7 @@ const categories = [
       {
         id: "nutriplantplus",
         name: "Nutriplant Plus",
-        image: "assets/images/nutriplant_plus_peque.png",
+        image: "assets/images/nutriplant_plus_peque.webp",
         pdf: "assets/pdfs/nutriplantplus.pdf",
         shortDesc:
           "Fertilizante foliar completo, enriquecido con elementos mayores, secundarios y menores: nitrógeno, fósforo, potasio, hierro, zinc, boro, cobre, manganeso, cobalto y molibdeno.",
@@ -460,7 +460,7 @@ const categories = [
       {
         id: "nutriboro",
         name: "Nutri Boro",
-        image: "assets/images/nutri_boro_peque.png",
+        image: "assets/images/nutri_boro_peque.webp",
         pdf: "assets/pdfs/nutriboro.pdf",
         shortDesc:
           "Fertilizante con molibdeno y boro al 11%, formulado para ser aplicado foliarmente o al suelo.",
@@ -481,7 +481,7 @@ const categories = [
       {
         id: "nutrik80",
         name: "Nutri-K 80",
-        image: "assets/images/nutrik80_peque.png",
+        image: "assets/images/nutrik80_peque.webp",
         pdf: "assets/pdfs/nutrik80.pdf",
         shortDesc:
           "Fertilizante concentrado de potasio y fósforo con inmediata asimilación, biológicamente activado con L-aminoácidos, materia orgánica, vitaminas, fitohormonas y microelementos esenciales.",
@@ -503,7 +503,7 @@ const categories = [
       {
         id: "aminok",
         name: "Aminok",
-        image: "assets/images/aminok_peque.png",
+        image: "assets/images/aminok_peque.webp",
         pdf: "assets/pdfs/aminok.pdf",
         shortDesc:
           "Fertilizante foliar y radicular con alta concentración de potasio y fósforo, enriquecido con aminoácidos. Acelera el llenado del grano o fruto e incrementa la translocación de azúcares.",
@@ -524,7 +524,7 @@ const categories = [
       {
         id: "sagaquel-combi",
         name: "Sagaquel Combi",
-        image: "assets/images/sagaquel_combi_peque.png",
+        image: "assets/images/sagaquel_combi_peque.webp",
         pdf: "assets/pdfs/sagaquel-combi.pdf",
         shortDesc:
           "Fertilizante foliar y radicular líquido multiquelatado que contiene todos los microelementos necesarios para un máximo rendimiento de las cosechas.",
@@ -554,7 +554,7 @@ const categories = [
       {
         id: "beauvetic",
         name: "Beauvetic",
-        image: "assets/images/beauvetic_peque.png",
+        image: "assets/images/beauvetic_peque.webp",
         pdf: "assets/pdfs/beauvetic.pdf",
         shortDesc:
           "Beauveria bassiana, hongo que parasita insectos plaga. Ingresa al insecto y ocasiona su muerte; puede infectar a más de 200 especies de insectos.",
@@ -575,7 +575,7 @@ const categories = [
       {
         id: "arbusfort",
         name: "Arbusfort Polvo",
-        image: "assets/images/arbusfort_peque.png",
+        image: "assets/images/arbusfort_peque.webp",
         pdf: "assets/pdfs/arbusfort.pdf",
         shortDesc:
           "Hongos micorrícicos que hacen simbiosis con las raíces, acelerando la microagregación del suelo, aumentando la exploración radicular y mejorando la absorción de nutrientes.",
@@ -596,7 +596,7 @@ const categories = [
       {
         id: "bacilltic",
         name: "Bacilltic",
-        image: "assets/images/bacilltic_peque.png",
+        image: "assets/images/bacilltic_peque.webp",
         pdf: "assets/pdfs/bacilltic.pdf",
         shortDesc:
           "Consorcio de Bacillus siamensis, B. subtilis, B. amyloliquefaciens y B. velezensis. Generan antagonismo contra patógenos mediante sustancias antibióticas e intervienen en el control de hongos en hoja y suelo.",
@@ -617,7 +617,7 @@ const categories = [
       {
         id: "trichotic-liq",
         name: "Trichotic Líquido",
-        image: "assets/images/trichotic_liq_peque.png",
+        image: "assets/images/trichotic_liq_peque.webp",
         pdf: "assets/pdfs/trichotic-liq.pdf",
         shortDesc:
           "Trichoderma spp. que genera antagonismo frente a patógenos, induce resistencia en las plantas e interviene en el control de microorganismos y hongos patógenos.",
@@ -637,7 +637,7 @@ const categories = [
       {
         id: "paecylotic",
         name: "Paecylotic",
-        image: "assets/images/paecylotic_peque.png",
+        image: "assets/images/paecylotic_peque.webp",
         pdf: "assets/pdfs/paecylotic.pdf",
         shortDesc:
           "Contiene esporas del hongo nematófago Purpureocillium lilacinum (antes Paecilomyces lilacinus). Actúa sobre huevos, larvas y adultos, y se puede mezclar con fertilizantes.",
@@ -657,7 +657,7 @@ const categories = [
       {
         id: "trichotic-polvo",
         name: "Trichotic Polvo",
-        image: "assets/images/trichotic_polvo_peque.png",
+        image: "assets/images/trichotic_polvo_peque.webp",
         pdf: "assets/pdfs/trichotic-polvo.pdf",
         shortDesc:
           "Trichoderma spp. en polvo que genera antagonismo frente a patógenos, induce resistencia en las plantas e interviene en el control de microorganismos y hongos patógenos.",
