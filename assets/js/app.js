@@ -169,19 +169,6 @@ function getDecoSrc(p) {
 // ════════════════════════════════════════════
 //  MODAL HELPERS
 // ════════════════════════════════════════════
-function buildAccordion(uid, label, bodyHTML, isOpen) {
-  return `
-    <div class="modal-accordion${isOpen ? " open" : ""}">
-      <button class="accordion-trigger" aria-expanded="${isOpen ? "true" : "false"}" aria-controls="acc-${escapeHTML(uid)}">
-        <span class="acc-title">${escapeHTML(label)}</span>
-        <span class="accordion-chevron">›</span>
-      </button>
-      <div class="accordion-body" id="acc-${escapeHTML(uid)}" role="region">
-        <div class="accordion-inner">${bodyHTML}</div>
-      </div>
-    </div>`;
-}
-
 function buildCompositionItems(comp) {
   const cleaned = comp.replace(/\.$/, "").trim();
   const items = cleaned
@@ -225,10 +212,6 @@ window.openModal = function (id) {
       <span class="mchip ${escapeHTML(p.cssClass)}-mchip">${escapeHTML(p.tag)}</span>
     </div>
 
-    <div class="modal-accordions">
-      ${buildAccordion("desc", "Descripción completa", `<p>${escapeHTML(p.fullDesc)}</p>`, true)}
-    </div>
-
     <div class="modal-actions">
       ${safePdf ? `<a href="${safePdf}" class="btn-download" target="_blank" rel="noopener noreferrer">Ver ficha técnica (PDF)</a>` : ""}
       <a href="https://wa.me/593999406826?text=${encodeURIComponent(`Me interesa el producto *${p.name}* de Pagrow. ¿Podrían darme más información?`)}" class="btn-contact" target="_blank" rel="noopener noreferrer">Consultar con un agrónomo</a>
@@ -257,28 +240,6 @@ document.getElementById("modalOverlay").addEventListener("click", function (e) {
 });
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
-});
-
-// Accordion toggle — single delegated listener on stable parent
-document.getElementById("modalSheet").addEventListener("click", function (e) {
-  const trigger = e.target.closest(".accordion-trigger");
-  if (!trigger) return;
-  const accordion = trigger.closest(".modal-accordion");
-  const isOpen = accordion.classList.contains("open");
-  accordion
-    .closest(".modal-accordions")
-    .querySelectorAll(".modal-accordion")
-    .forEach((a) => {
-      a.classList.remove("open");
-      a.querySelector(".accordion-trigger").setAttribute(
-        "aria-expanded",
-        "false",
-      );
-    });
-  if (!isOpen) {
-    accordion.classList.add("open");
-    trigger.setAttribute("aria-expanded", "true");
-  }
 });
 
 // ════════════════════════════════════════════
