@@ -275,7 +275,7 @@ const categories = [
         image: "assets/images/humax_20_peque.webp",
         pdf: "assets/pdfs/desbloqueo-y-establecimiento-de-microorganismos/humax-20.pdf",
         shortDesc:
-          "100% biodegradable, a base de ácidos húmicos y fúlvicos. Aplicación foliar o al suelo. Mejora la estructura del suelo, favorece el desarrollo radicular, estimula la actividad microbiana y aumenta la disponibilidad de nutrientes y la eficiencia de los fertilizantes.",
+          "100% biodegradable, a base de ácidos húmicos y fúlvicos. Aplicación foliar o al suelo. Mejora la estructura del suelo, favorece el desarrollo radicular, estimula la actividad microbiana y aumenta la disponibilidad de nutrientes y la eficiencia de los fertilizantes. Tiene la capacidad de mejorar la actividad microbiana.",
         fullDesc:
           "Humax 20 es 100% biodegradable, a base de ácidos húmicos (20%) y fúlvicos obtenida de leonardita de alta calidad. Su acción foliar o al suelo mejora la estructura, favorece el desarrollo radicular y estimula la actividad microbiana. Además, aumenta la disponibilidad de nutrientes y la eficiencia de los fertilizantes.",
         benefits: [
@@ -289,6 +289,7 @@ const categories = [
         application:
           "Drench o riego. Dosis: 3–5 L/ha. Mezclar con agua antes de aplicar.",
         tag: "Suelo",
+        badge: "Orgánico",
       },
 
       {
@@ -311,6 +312,7 @@ const categories = [
         application:
           "Solubilizar antes de aplicar. Dosis: 0.5–1 kg/ha en drench.",
         tag: "Suelo",
+        badge: "Orgánico",
       },
       {
         id: "nutrifull",
@@ -318,7 +320,7 @@ const categories = [
         image: "assets/images/nutrifull_peque.webp",
         pdf: "assets/pdfs/desbloqueo-y-establecimiento-de-microorganismos/nutri-full.pdf",
         shortDesc:
-          "Concentrado 100% orgánico a base de ácidos fúlvicos bioactivados enzimáticamente, que incrementan notablemente la absorción, asimilación y movilización de nutrientes del suelo.",
+          "Concentrado 100% orgánico a base de ácidos fúlvicos bioactivados enzimáticamente, que incrementan notablemente la absorción, asimilación y movilización de nutrientes del suelo. Tiene la capacidad de mejorar la actividad microbiana.",
         fullDesc:
           "Nutrifull es un concentrado 100% orgánico a base de ácidos fúlvicos bioactivados enzimáticamente, los cuales incrementan notablemente la absorción, asimilación y movilización de los nutrientes del suelo. Su formulación 3 en 1 aporta nitrógeno, fósforo y potasio de liberación gradual, acompañados de ácidos húmicos y aminoácidos que maximizan la eficiencia de absorción.",
         benefits: [
