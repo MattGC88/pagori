@@ -700,7 +700,7 @@ const categories = [
     id: "proteccion",
     name: "Protección de cultivos",
     description:
-      "Los patógenos fúngicos son una amenaza constante que puede comprometer la productividad del cultivo, especialmente en condiciones de alta humedad y temperatura. Una protección preventiva con productos de alta adherencia y cobertura uniforme en la hoja es la primera línea de defensa para mantener el cultivo sano desde las etapas tempranas.",
+      "Soluciones a base de extractos vegetales para el control de hongos e insectos, que protegen las plantas y favorecen un manejo más sostenible del cultivo.",
     cssClass: "cat-proteccion",
     products: [
       {
